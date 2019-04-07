@@ -6,7 +6,8 @@
     "strict": true, /* Enable all strict type-checking options. */
     "rootDir": "scripts_ts",
     "outFile": "scripts_js/main.js",
-    "sourceMap": true
+    "sourceMap": true,
+    "experimentalDecorators": true
   },
 
   /*

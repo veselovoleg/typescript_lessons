@@ -91,4 +91,20 @@ function hasNoCouple(array: number[]):number {
     return parseInt(String(num), 2);
 }
 let arr_of_nums = [2, 3, 3, 2, 5, 7, 8, 8, 7, 5, 9];
-console.log(`Num without couple: ${ hasNoCouple(arr_of_nums) }`);
+console.log(`Num without couple: ${ hasNoCouple(arr_of_nums) }`); //=> 9
+
+//palindrome
+function isPalindrome(str:string):string{
+    let tempStr: Set<string> = new Set();
+
+    Array.from(str).forEach(char => {
+        tempStr.has(char) ? tempStr.delete(char) : tempStr.add(char);
+    })
+
+    return tempStr.size <= 1 ? `${ str } is palindrome` : `${ str } is  not  palindrome`;
+}
+
+console.log(isPalindrome('topol')); //false
+console.log(isPalindrome('ololo')); //true
+console.log(isPalindrome('polopolopolo'));//false
+console.log(isPalindrome('polopolopolopolo'));//true

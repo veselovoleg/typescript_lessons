@@ -78,3 +78,17 @@ function areAnagrams(word1: string, word2: string) {
 
 console.log(areAnagrams('silent', 'listen')); //True
 console.log(areAnagrams('night', 'knight')); //False
+
+//Find number without couple
+function hasNoCouple(array: number[]):number {
+    let arr: number[] = array.map(item => Number(item.toString(2))),
+        num: number = arr[0];
+
+    arr.forEach((item: number, index: number) => {
+        if (index !== 0) num = num ^ item;
+    })
+
+    return parseInt(String(num), 2);
+}
+let arr_of_nums = [2, 3, 3, 2, 5, 7, 8, 8, 7, 5, 9];
+console.log(`Num without couple: ${ hasNoCouple(arr_of_nums) }`);
